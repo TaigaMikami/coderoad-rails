@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
+gem 'annotate'
 
 group :development, :test do
   gem 'rspec-rails'
