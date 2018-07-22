@@ -23,6 +23,10 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
 gem 'annotate'
+gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'rspec-rails'
