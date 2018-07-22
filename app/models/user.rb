@@ -19,6 +19,8 @@
 
 class User < ApplicationRecord
   has_many :social_profiles, dependent: :destroy
+  has_many :tutorials, through: :user_tutorials
+  has_many :user_tutorials
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

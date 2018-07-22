@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  resources :tutorials
+
   # get "/auth/:provider/callback" => "users/omniauth_callbacks#github"
 end

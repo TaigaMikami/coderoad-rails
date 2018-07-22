@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_180523) do
+ActiveRecord::Schema.define(version: 2018_07_22_152530) do
 
   create_table "social_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -27,6 +27,24 @@ ActiveRecord::Schema.define(version: 2018_07_21_180523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_social_profiles_on_user_id"
+  end
+
+  create_table "tutorials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "star"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_tutorials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tutorial_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tutorial_id"], name: "index_user_tutorials_on_tutorial_id"
+    t.index ["user_id"], name: "index_user_tutorials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,4 +71,6 @@ ActiveRecord::Schema.define(version: 2018_07_21_180523) do
   end
 
   add_foreign_key "social_profiles", "users"
+  add_foreign_key "user_tutorials", "tutorials"
+  add_foreign_key "user_tutorials", "users"
 end

@@ -1,0 +1,8 @@
+= form_with(model: tutorial, local:true) do |f|
+  = f.text_field :title, placeholder: 'タイトル'
+  = f.text_area :content, placeholder: '内容'
+  = f.url_field :url, placeholder: 'http://...'
+  = f.submit
+
+
+
