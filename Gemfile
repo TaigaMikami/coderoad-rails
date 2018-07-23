@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'gon'
 
 gem 'slim-rails'
 gem 'html2slim'
@@ -27,6 +30,7 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-github'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'rspec-rails'
