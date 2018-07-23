@@ -18,14 +18,15 @@ header
               | Home
               span.sr-only (current)
           li.nav-item
-            a.nav-link.waves-effect href="https://mdbootstrap.com/material-design-for-bootstrap/" About
-          li.nav-item
-            a.nav-link.waves-effect href="https://mdbootstrap.com/getting-started/" target="_blank"  Free download
-          li.nav-item
-            a.nav-link.waves-effect href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"  Free tutorials
+            a.nav-link.waves-effect href="https://mdbootstrap.com/material-design-for-bootstrap/" チュートリアル一覧
+
         /! Right
         ul.navbar-nav.nav-flex-icons
           li.nav-item
-            = link_to '/users/auth/github', class: 'nav-link border border-light rounded waves-effect' do
-              i.fa.fa-github.mr-2
-              | GitHubログイン
+            - if user_signed_in?
+              = link_to '/users/auth/github', class: 'nav-link border border-light rounded waves-effect' do
+                i.fa.fa-github.mr-2
+                | GitHubログイン
+            - else
+              = link_to '/users/auth/github', class: 'nav-link border border-light rounded waves-effect' do
+                | マイページ

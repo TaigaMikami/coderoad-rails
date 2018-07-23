@@ -1,0 +1,25 @@
+  section.text-center
+    /! Grid row
+    .row.mb-4.wow.fadeIn
+      - @tutorials.each do |tutorial|
+        .col-lg-4.col-md-6.mb-4
+          /! Card
+          .card
+            /! Card header
+            .card-header
+              h2
+                = tutorial.title
+            .card-body
+              /! Text
+              .tag-container
+                - tutorial.tag_list.each do |tag|
+                  label.btn-success.tutorial-tag
+                    = tag
+              p.card-text
+                = tutorial.content
+              a.btn.btn-primary.btn-md href="https://mdbootstrap.com/automated-app-start/"
+                | 詳細
+                i.fa.fa-play.ml-2
+              a.btn.btn-primary.btn-md href="https://mdbootstrap.com/automated-app-start/"
+                | チュートリアル
+                i.fa.fa-play.ml-2

@@ -6,12 +6,10 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    - if asset_exist? "stylesheets/#{@individual_assets}" && @individual_assets.present?
-      = stylesheet_link_tag @individual_assets = "#{controller_name}/application", media: 'all'
+    = stylesheet_link_tag @individual_assets = "#{controller_name}/application", media: 'all' if asset_exist? "javascripts/#{@individual_assets}"
     = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    - if asset_exist? "javascripts/#{@individual_assets}" && @individual_assets.present?
-      = javascript_include_tag  @individual_assets = "#{controller_name}/application"
+    = javascript_include_tag  @individual_assets = "#{controller_name}/application" if asset_exist? "javascripts/#{@individual_assets}"
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
   body
     = render 'layouts/header'

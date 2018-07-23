@@ -4,6 +4,7 @@ class TutorialsController < ApplicationController
   before_action  :set_available_tags_to_gon
 
   def index
+    @tutorials = Tutorial.all
   end
 
   def show
