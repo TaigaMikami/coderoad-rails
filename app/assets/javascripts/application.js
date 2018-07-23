@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require rails-ujs
+//= require bootstrap.min
+//= require mdb
+//= require popper.min
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require_tree ./common/
