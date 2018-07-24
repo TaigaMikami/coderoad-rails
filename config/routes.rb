@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'home#top'
 
+  resources :users
+
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
     passwords:     'users/passwords',
