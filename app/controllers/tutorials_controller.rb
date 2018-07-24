@@ -1,5 +1,6 @@
 class TutorialsController < ApplicationController
   # before_action  :set_tutorial_tags_to_gon
+  before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :make_own_tutorial]
   before_action  :set_available_tags_to_gon
   before_action  :set_tags
 
@@ -12,7 +13,6 @@ class TutorialsController < ApplicationController
   end
 
   def show
-    @tutorial = Tutorial.find(params[:id])
   end
 
   def new
@@ -29,12 +29,22 @@ class TutorialsController < ApplicationController
     end
   end
 
+  def make_own_tutorial
+    redirect_to tutorials_path and return unless user_signed_in?
+
+    if UserTutorial.where('user_id = ? and tutorial_id =?', current_user.id, @tutorial.id).blank?
+      current_user.tutorials << @tutorial
+    else
+      UserTutorial.where('user_id = ? and tutorial_id =?', current_user.id, @tutorial.id).delete_all
+    end
+    redirect_to tutorials_path
+  end
+
   def set_available_tags_to_gon
     gon.available_tags = Tutorial.tags_on(:tags).pluck(:name)
   end
 
   private
-    def
     def set_tutorial
       @tutorial = Tutorial.find(params[:id])
     end

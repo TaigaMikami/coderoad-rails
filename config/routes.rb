@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   }
 
   resources :tutorials
+  post 'tutorials/:id', to: 'tutorials#make_own_tutorial'
   get 'tags/:tag', to: 'tutorials#index', as: :tag
 
 end
