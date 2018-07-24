@@ -22,7 +22,8 @@ header
           li.nav-item
             - if user_signed_in?
               = link_to '/users/auth/github', class: 'nav-link border border-light rounded waves-effect' do
-                | マイページ
+                = image_tag current_user.social_profiles.find_by(provider: "github").image_url, size: '28x28'
+                |  マイページ
             - else
               = link_to '/users/auth/github', class: 'nav-link border border-light rounded waves-effect' do
                 i.fa.fa-github.mr-2

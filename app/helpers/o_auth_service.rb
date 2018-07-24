@@ -36,7 +36,6 @@ module OAuthService
             )
             # email確認メール送信を延期するために一時的にemail確認済みの状態にする。
             user.skip_confirmation!
-            binding.pry
             # email仮をデータベースに保存するため、validationを一時的に無効化。
             user.save(validate: false)
             user
