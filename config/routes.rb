@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   }
 
   resources :tutorials
+  get 'tags/:tag', to: 'tutorials#index', as: :tag
 
-  # get "/auth/:provider/callback" => "users/omniauth_callbacks#github"
 end

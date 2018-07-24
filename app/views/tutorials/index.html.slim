@@ -1,25 +1,36 @@
-  section.text-center
-    /! Grid row
-    .row.mb-4.wow.fadeIn
-      - @tutorials.each do |tutorial|
-        .col-lg-4.col-md-6.mb-4
-          /! Card
-          .card
-            /! Card header
-            .card-header
-              h2
-                = tutorial.title
-            .card-body
-              /! Text
-              .tag-container
-                - tutorial.tag_list.each do |tag|
-                  label.btn-success.tutorial-tag
-                    = tag
-              p.card-text
-                = tutorial.content
-              a.btn.btn-primary.btn-md href="https://mdbootstrap.com/automated-app-start/"
-                | 詳細
-                i.fa.fa-play.ml-2
-              a.btn.btn-primary.btn-md href="https://mdbootstrap.com/automated-app-start/"
-                | チュートリアル
-                i.fa.fa-play.ml-2
+.row
+  .col-md-10
+    section.text-center
+      /! Grid row
+      .row.mb-4.wow.fadeIn
+        - @tutorials.each do |tutorial|
+          .col-lg-4.col-md-6.mb-4
+            /! Card
+            .card
+              /! Card header
+              .card-header
+                h2
+                  = tutorial.title
+              .card-body
+                /! Text
+                .tag-container
+                  - tutorial.tag_list.each do |tag|
+                    label.btn-success.tutorial-tag
+                      = tag
+                p.card-text
+                  = tutorial.content
+                = link_to tutorial, class: 'btn btn-primary btn-md' do
+                  | 詳細
+                = link_to "#{tutorial.url}", class: 'btn btn-primary btn-md' do
+                  | チュートリアル
+                  i.fa.fa-play.ml-2
+
+  .col-md-2
+    ul.list-group
+      li.list-group-item.bg-info.text-white カテゴリー
+      - @tags.each do |tag|
+        = link_to tag_path(tag.name), class: 'text-dark' do
+          li.list-group-item.text-dark
+            = tag.name
+            label.tutorial-tag-count
+              = tag.taggings_count

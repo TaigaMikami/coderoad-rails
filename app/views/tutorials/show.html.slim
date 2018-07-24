@@ -1,2 +1,18 @@
-h1 Tutorials#show
-p Find me in app/views/tutorials/show.html.slim
+/! Card
+.card
+  /! Card header
+  .card-header
+    h2
+      = @tutorial.title
+  .card-body
+    /! Text
+    .tag-container
+      - @tutorial.tag_list.each do |tag|
+        label.btn-success.tutorial-tag
+          = tag
+    p.card-text
+      = @tutorial.content
+    .tutorial-link
+      = link_to "#{@tutorial.url}", class: 'btn btn-primary btn-md' do
+        | チュートリアル
+        i.fa.fa-play.ml-2

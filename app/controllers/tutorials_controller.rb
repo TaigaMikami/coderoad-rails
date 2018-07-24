@@ -1,13 +1,18 @@
 class TutorialsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
   # before_action  :set_tutorial_tags_to_gon
   before_action  :set_available_tags_to_gon
+  before_action  :set_tags
 
   def index
-    @tutorials = Tutorial.all
+    if params[:tag]
+      @tutorials = Tutorial.tagged_with(params[:tag])
+    else
+      @tutorials = Tutorial.all
+    end
   end
 
   def show
+    @tutorial = Tutorial.find(params[:id])
   end
 
   def new
@@ -29,8 +34,13 @@ class TutorialsController < ApplicationController
   end
 
   private
+    def
     def set_tutorial
       @tutorial = Tutorial.find(params[:id])
+    end
+
+    def set_tags
+      @tags = Tutorial.tags_on(:tags)
     end
 
     def tutorial_params
