@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_010928) do
+ActiveRecord::Schema.define(version: 2018_08_22_162810) do
 
   create_table "social_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2018_07_23_010928) do
     t.text "content"
     t.integer "star"
     t.string "url"
+    t.string "ogp_url"
+    t.text "ogp_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

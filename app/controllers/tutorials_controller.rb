@@ -21,6 +21,7 @@ class TutorialsController < ApplicationController
 
   def create
     @tutorial = Tutorial.new(tutorial_params)
+    @tutorial.ogp_url, @tutorial.ogp_description = get_ogp(@tutorial.url)
     if @tutorial.save
       redirect_to root_path
     else
@@ -51,6 +52,11 @@ class TutorialsController < ApplicationController
 
     def set_tags
       @tags = Tutorial.tags_on(:tags)
+    end
+
+    def get_ogp(url)
+      og = OpenGraph.new(url)
+      return og.images[0], og.description
     end
 
     def tutorial_params
