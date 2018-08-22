@@ -11,6 +11,7 @@
         label.btn-success.tutorial-tag
           = tag
     p.card-text
+      = @tutorial.ogp_description
       = @tutorial.content
     .tutorial-link
       = link_to "#{@tutorial.url}", class: 'btn btn-primary btn-md' do

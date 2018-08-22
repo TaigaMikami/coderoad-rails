@@ -32,6 +32,8 @@ gem 'omniauth-oauth2'
 gem 'omniauth-github'
 gem 'acts-as-taggable-on'
 
+gem 'opengraph_parser'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
