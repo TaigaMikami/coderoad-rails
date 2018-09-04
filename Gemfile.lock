@@ -155,7 +155,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    mysql2 (0.5.2)
+    mysql2 (0.4.10)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -328,7 +328,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen (>= 3.0.5, < 3.2)
-  mysql2 (>= 0.4.4, < 0.6.0)
+  mysql2 (~> 0.4.9)
   omniauth
   omniauth-github
   omniauth-oauth2
@@ -352,4 +352,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
