@@ -16,7 +16,13 @@ header
         ul.navbar-nav.mr-auto
           li.nav-item
             = link_to tutorials_path, class: 'nav-link waves-effect'
-              | チュートリアル一覧
+              | 新規チュートリアル
+          li.nav-item
+            = link_to tutorials_ranks_pv_rank_path, class: 'nav-link waves-effect'
+              | 訪問ランキング
+          li.nav-item
+            = link_to tutorials_ranks_iine_rank_path, class: 'nav-link waves-effect'
+              | いいねランキング
 
         /! Right
         ul.navbar-nav.nav-flex-icons
