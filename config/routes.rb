@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   namespace :tutorials do
     namespace :ranks do
-      get :pv_rank
-      get :iine_rank
+      get :pv
+      get :iine
     end
   end
 

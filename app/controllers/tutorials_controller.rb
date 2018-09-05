@@ -1,7 +1,7 @@
 class TutorialsController < ApplicationController
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :make_own_tutorial]
   before_action  :set_available_tags_to_gon
-  before_action  :set_tags, only: [:index, :show, :pv_rank, :iine_rank]
+  before_action  :set_tags, only: [:index, :show, :pv, :iine]
   impressionist :actions=> [:show]
 
   def index
