@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   }
 
   resources :tutorials
+
+  namespace :tutorials do
+    namespace :ranks do
+      get :pv_rank
+      get :iine_rank
+    end
+  end
+
   post 'tutorials/:id', to: 'tutorials#make_own_tutorial'
   get 'tags/:tag', to: 'tutorials#index', as: :tag
 
