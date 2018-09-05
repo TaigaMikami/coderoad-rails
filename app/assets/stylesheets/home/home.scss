@@ -1,3 +1,35 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hero {
+  background-color: #f8f9fa;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  text-align: center;
+}
+
+.flex-fill {
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.home-section {
+  margin: 70px 0 100px 0;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+#howto {
+  .fa-github {
+    color: #2196f3;
+    font-size: 170px;
+  }
+}
+
+#login {
+  text-align: center;
+}
