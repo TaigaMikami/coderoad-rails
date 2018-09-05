@@ -1,8 +1,8 @@
 class TutorialsController < ApplicationController
-  # before_action  :set_tutorial_tags_to_gon
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :make_own_tutorial]
   before_action  :set_available_tags_to_gon
   before_action  :set_tags
+  impressionist :actions=> [:show]
 
   def index
     if params[:tag]
@@ -13,6 +13,7 @@ class TutorialsController < ApplicationController
   end
 
   def show
+    impressionist(@tutorial, nil, unique: [:session_hash])
   end
 
   def new

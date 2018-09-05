@@ -124,6 +124,8 @@ GEM
       hpricot
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   html2slim
+  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
