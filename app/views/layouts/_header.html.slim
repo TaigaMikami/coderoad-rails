@@ -14,15 +14,15 @@ header
       #navbarSupportedContent.collapse.navbar-collapse
         /! Left
         ul.navbar-nav.mr-auto
-          li.nav-item
-            = link_to tutorials_path, class: 'nav-link waves-effect'
-              | 新規チュートリアル
-          li.nav-item
-            = link_to tutorials_ranks_pv_path, class: 'nav-link waves-effect'
-              | 訪問ランキング
-          li.nav-item
-            = link_to tutorials_ranks_iine_path, class: 'nav-link waves-effect'
-              | いいねランキング
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle.border.border-light.rounded.waves-effect aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button"
+              | チュートリアル
+            .dropdown-menu
+              = link_to '新規チュートリアル', tutorials_path, class: 'dropdown-item'
+              = link_to 'トレンドいいねランキング', tutorials_ranks_iine_path, class: 'dropdown-item'
+              = link_to '全期間いいねランキング', tutorials_ranks_all_period_iine_path, class: 'dropdown-item'
+              = link_to 'トレンドPVランキング', tutorials_ranks_pv_path, class: 'dropdown-item'
+              = link_to '全期間PVランキング', tutorials_ranks_all_period_pv_path, class: 'dropdown-item'
 
         /! Right
         ul.navbar-nav.nav-flex-icons
