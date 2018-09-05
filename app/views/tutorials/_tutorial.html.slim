@@ -24,9 +24,14 @@
           = link_to "#{tutorial.url}", class: 'btn btn-primary btn-md' do
             | チュートリアル
             i.fa.fa-play.ml-2
-          = link_to tutorial_path(tutorial), method: :post do
-            - if tutorial.iine?(current_user)
-              i.fa.fa-star.ml-2.star-blue
-            - else
-              i.fa.fa-star.ml-2.star-gray
-          |  #{tutorial.users.count}件
+          .d-flex.justify-content-center.iine-pv
+            .iine
+              = link_to tutorial_path(tutorial), method: :post do
+                - if tutorial.iine?(current_user)
+                  i.fa.fa-star.ml-2.star-blue
+                - else
+                  i.fa.fa-star.ml-2.star-gray
+              |  #{tutorial.users.count}件
+            .pv
+              |  #{tutorial.impressionist_count} views
+
