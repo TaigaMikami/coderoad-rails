@@ -1,7 +1,7 @@
 class TutorialsController < ApplicationController
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :make_own_tutorial]
   before_action  :set_available_tags_to_gon
-  before_action  :set_tags
+  before_action  :set_tags, only: [:index, :show, :pv_rank, :iine_rank]
   impressionist :actions=> [:show]
 
   def index
@@ -39,7 +39,7 @@ class TutorialsController < ApplicationController
     else
       UserTutorial.where('user_id = ? and tutorial_id =?', current_user.id, @tutorial.id).delete_all
     end
-    redirect_to tutorials_path
+    redirect_to request.referer
   end
 
   def set_available_tags_to_gon
