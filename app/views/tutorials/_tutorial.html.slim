@@ -1,0 +1,32 @@
+.row.mb-4.wow.fadeIn
+  - @tutorials.each do |tutorial|
+    .col-lg-4.col-md-6.mb-4
+      /! Card
+      .card
+        /! Card header
+        - if tutorial.ogp_url.blank?
+          = image_tag 'no-ogp-image.jpg', height: '200'
+        - else
+          = image_tag tutorial.ogp_url, height: '200'
+        .card-header
+          h6
+            = tutorial.title
+        .card-body
+          /! Text
+          .tag-container
+            - tutorial.tag_list.each do |tag|
+              label.btn-success.tutorial-tag
+                = tag
+          p.card-text
+            = tutorial.content
+          = link_to tutorial, class: 'btn btn-primary btn-md' do
+            | 詳細
+          = link_to "#{tutorial.url}", class: 'btn btn-primary btn-md' do
+            | チュートリアル
+            i.fa.fa-play.ml-2
+          = link_to tutorial_path(tutorial), method: :post do
+            - if tutorial.iine?(current_user)
+              i.fa.fa-star.ml-2.star-blue
+            - else
+              i.fa.fa-star.ml-2.star-gray
+          |  #{tutorial.users.count}件
