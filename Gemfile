@@ -9,30 +9,34 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-# gem 'mini_racer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-# gem 'redis', '~> 4.0'
-# gem 'bcrypt', '~> 3.1.7'
-# gem 'mini_magick', '~> 4.8'
-# gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'gon'
-
 gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
 gem 'annotate'
+
+# 環境変数
 gem 'dotenv-rails'
+
+# github認証
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-github'
+
+# タグ
 gem 'acts-as-taggable-on'
 
+# ogp画像取得
 gem 'opengraph_parser'
+
+# PV数計測
+gem 'impressionist'
 
 group :development, :test do
   gem 'rspec-rails'
