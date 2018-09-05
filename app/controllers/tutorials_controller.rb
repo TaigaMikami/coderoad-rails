@@ -8,7 +8,7 @@ class TutorialsController < ApplicationController
     if params[:tag]
       @tutorials = Tutorial.tagged_with(params[:tag])
     else
-      @tutorials = Tutorial.all
+      @tutorials = Tutorial.all.reverse # 新規投稿順
     end
   end
 
