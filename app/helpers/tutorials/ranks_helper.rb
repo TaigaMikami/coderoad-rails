@@ -1,0 +1,2 @@
+module Tutorials::RanksHelper
+end
