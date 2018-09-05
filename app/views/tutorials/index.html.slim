@@ -9,7 +9,7 @@
             .card
               /! Card header
               - if tutorial.ogp_url.blank?
-                = image_tag 'p.jpg', height: '200'
+                = image_tag 'no-ogp-image.jpg', height: '200'
               - else
                 = image_tag tutorial.ogp_url, height: '200'
               .card-header
