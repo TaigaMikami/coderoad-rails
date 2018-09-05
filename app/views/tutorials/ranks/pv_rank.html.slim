@@ -1,0 +1,15 @@
+.row
+  .col-md-10
+    section.text-center
+      /! Grid row
+      = render 'tutorials/tutorial'
+
+  .col-md-2
+    ul.list-group
+      li.list-group-item.bg-info.text-white カテゴリー
+      - @tags.each do |tag|
+        = link_to tag_path(tag.name), class: 'text-dark' do
+          li.list-group-item.text-dark
+            = tag.name
+            label.tutorial-tag-count
+              = tag.taggings_count
