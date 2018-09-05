@@ -5,6 +5,8 @@ class Tutorial < ApplicationRecord
   acts_as_taggable
   is_impressionable
 
+  scope :seven_day_post, -> { where('created_at > ?', 7.days.ago )}
+
   def iine?(user)
     users.include?(user)
   end
