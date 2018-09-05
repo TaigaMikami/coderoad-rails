@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#top'
 
-  resources :users
+  resources :users, only: %i[index show]
 
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
