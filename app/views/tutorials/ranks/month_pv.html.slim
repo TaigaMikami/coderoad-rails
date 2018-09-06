@@ -1,12 +1,7 @@
 .row
   .col-md-2.side-selector
     ul.list-group
-      = link_to tutorials_path do
-        li.list-group-item.text-dark タイムライン
-      = link_to tutorials_ranks_iine_path do
-        li.list-group-item.bg-coderoad.text-white  いいねランキング
-      = link_to tutorials_ranks_pv_path do
-        li.list-group-item.text-dark PVランキング
+      = render 'rank_list'
   .col-md-8.rank-list
     section
       /! Grid row

@@ -1,0 +1,14 @@
+ul.list-group
+  = link_to tutorials_path do
+    li.list-group-item.text-dark#timeline
+      i.fa.fa-calendar.ml-2
+      | タイムライン
+  = link_to tutorials_ranks_iine_path do
+    li.list-group-item.text-dark#iine-rank
+      i.fa.fa-star.ml-2
+      | いいねランキング
+  = link_to tutorials_ranks_pv_path do
+    / li.list-group-item.bg-coderoad.text-white
+    li.list-group-item.text-dark#pv-rank
+      i.fa.fa-eye.ml-2
+      | PVランキング
