@@ -40,3 +40,60 @@
     color: #999;
   }
 }
+
+.posted_date {
+  color: #999;
+}
+
+.side-selector {
+  margin-top: 20px;
+  padding-right: 0;
+  font-size: 12px;
+  .fa {
+    font-size: 18px !important;
+    margin-right: 5px;
+  }
+}
+
+.rank-title {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px;
+  height: 50px;
+  h6 {
+    margin-bottom: 0;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+.rank-list {
+  padding-left: 0;
+}
+
+.rank-list-tab {
+  display: inline;
+  float: right;
+  margin-right: 20px;
+  .btn {
+    color: gray;
+    font-size: 12px;
+  }
+
+  .btn-active {
+    color: #2196f3;
+    font-weight: bold;
+  }
+}
+
+.media-body {
+  margin: 20px 20px 0 20px;
+}
+
+.media-title {
+  color: #555555;
+  :hover {
+    color: black;
+    text-decoration: underline;
+  }
+}

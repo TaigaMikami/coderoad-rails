@@ -1,8 +1,22 @@
 .row
-  .col-md-10
-    section.text-center
+  .col-md-2.side-selector
+    ul.list-group
+      = link_to tutorials_path do
+        li.list-group-item.text-dark
+          i.fa.fa-calendar.ml-2
+          | タイムライン
+      = link_to tutorials_ranks_iine_path do
+        li.list-group-item.bg-coderoad.text-white
+          i.fa.fa-star.ml-2
+          | いいねランキング
+      = link_to tutorials_ranks_pv_path do
+        li.list-group-item.text-dark
+          i.fa.fa-eye.ml-2
+          | PVランキング
+  .col-md-8.rank-list
+    section
       /! Grid row
-      = render 'tutorial'
+      = render 'iine_tutorial_stack'
 
   .col-md-2
     ul.list-group

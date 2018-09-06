@@ -11,6 +11,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag  @individual_assets = "#{controller_name}/application" if asset_exist? "javascripts/#{@individual_assets}"
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
   body
     = render 'layouts/header'
     main.mt-5.pt-5
