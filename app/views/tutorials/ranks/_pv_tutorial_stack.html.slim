@@ -1,0 +1,35 @@
+.border.rank-title
+  h6
+    i.fa.fa-trophy
+    | ランキング
+    .rank-list-tab
+      .btn-group.btn-group-sm aria-label=("Basic example") role="group"
+        = link_to '1週間', tutorials_ranks_pv_path, type: 'button'
+        = link_to '1ヶ月', tutorials_ranks_pv_path, type: 'button'
+        = link_to 'ALL', tutorials_ranks_all_period_pv_path, type: 'button'
+
+- @tutorials.each do |tutorial|
+  .media.border
+    - if tutorial.ogp_url.blank?
+      = image_tag 'no-ogp-image.jpg', size: '80x80'
+    - else
+      = image_tag tutorial.ogp_url, size: '80x80'
+    .media-body
+      = link_to tutorial, class: 'media-title' do
+        h6.mt-0 = tutorial.title
+      .iine-pv.d-flex.justify-content-end
+        - tutorial.tag_list.each do |tag|
+          label.btn-success.tutorial-tag
+            = tag
+        .posted_date
+          = tutorial.created_at.strftime('%Y/%m/%d')
+        .iine
+          = link_to tutorial_path(tutorial), method: :post do
+            - if tutorial.iine?(current_user)
+              i.fa.fa-star.ml-2.star-blue
+            - else
+              i.fa.fa-star.ml-2.star-gray
+          | #{tutorial.users.count}件
+        .pv
+          i.fa.fa-eye.ml-2.star-gray
+          |  #{tutorial.impressionist_count} views
