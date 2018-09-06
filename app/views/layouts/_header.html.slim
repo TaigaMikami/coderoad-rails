@@ -15,16 +15,27 @@ header
         /! Left
         ul.navbar-nav.mr-auto
           li.nav-item.dropdown
-            a.nav-link.dropdown-toggle.border.border-light.rounded.waves-effect aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button"
+            a.nav-link.dropdown-toggle.border.border-light.waves-effect aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button"
               | チュートリアル
             .dropdown-menu
-              = link_to 'タイムライン', tutorials_path, class: 'dropdown-item'
-              = link_to 'トレンドいいねランキング', tutorials_ranks_iine_path, class: 'dropdown-item'
-              = link_to '全期間いいねランキング', tutorials_ranks_all_period_iine_path, class: 'dropdown-item'
-              = link_to 'トレンドPVランキング', tutorials_ranks_pv_path, class: 'dropdown-item'
-              = link_to '全期間PVランキング', tutorials_ranks_all_period_pv_path, class: 'dropdown-item'
+              = link_to tutorials_path, class: 'dropdown-item' do
+                i.fa.fa-calendar.ml-2
+                |  タイムライン
+              = link_to tutorials_ranks_iine_path, class: 'dropdown-item' do
+                  i.fa.fa-star.ml-2
+                  |  いいねランキング
+              = link_to tutorials_ranks_pv_path, class: 'dropdown-item' do
+                  i.fa.fa-eye.ml-2
+                  |  PVランキング
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle.border.border-light.waves-effect aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#!" role="button"
+              | コミュニティ
+            .dropdown-menu
+              = link_to users_path, class: 'dropdown-item' do
+                i.fa.fa-users.ml-2
+                |  ユーザー一覧
           li.nav-item
-            = link_to '新規作成', new_tutorial_path, class: 'nav-link'
+            = link_to '新規作成', new_tutorial_path, class: 'nav-link border border-light'
 
         /! Right
         ul.navbar-nav.nav-flex-icons
