@@ -6,6 +6,7 @@ class Tutorial < ApplicationRecord
   is_impressionable
 
   scope :week_post, -> { where('created_at > ?', 7.days.ago )}
+  scope :month_post, -> { where('created_at > ?', 1.month.ago )}
 
   def iine?(user)
     users.include?(user)

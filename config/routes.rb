@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     namespace :ranks do
       get :pv
       get :iine
+      get :month_pv
+      get :month_iine
       get :all_period_pv
       get :all_period_iine
     end

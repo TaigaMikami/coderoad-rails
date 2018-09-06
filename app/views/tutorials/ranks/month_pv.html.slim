@@ -1,0 +1,23 @@
+.row
+  .col-md-2.side-selector
+    ul.list-group
+      = link_to tutorials_path do
+        li.list-group-item.text-dark タイムライン
+      = link_to tutorials_ranks_iine_path do
+        li.list-group-item.bg-coderoad.text-white  いいねランキング
+      = link_to tutorials_ranks_pv_path do
+        li.list-group-item.text-dark PVランキング
+  .col-md-8.rank-list
+    section
+      /! Grid row
+      = render 'pv_tutorial_stack'
+
+  .col-md-2
+    ul.list-group
+      li.list-group-item.bg-info.text-white カテゴリー
+      - @tags.each do |tag|
+        = link_to tag_path(tag.name), class: 'text-dark' do
+          li.list-group-item.text-dark
+            = tag.name
+            label.tutorial-tag-count
+              = tag.taggings_count
