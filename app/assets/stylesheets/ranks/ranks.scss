@@ -40,3 +40,35 @@
     color: #999;
   }
 }
+
+.posted_date {
+  color: #999;
+}
+
+.side-selector {
+  margin-top: 20px;
+  padding-right: 0;
+  font-size: 12px;
+  .fa {
+    font-size: 18px !important;
+    margin-right: 5px;
+  }
+}
+
+.rank-list {
+  padding-left: 0;
+}
+
+.media-body {
+  margin: 20px 20px 0 20px;
+}
+
+.media-title {
+  color: #555555;
+  :hover {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+
