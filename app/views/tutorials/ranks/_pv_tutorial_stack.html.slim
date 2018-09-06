@@ -4,9 +4,9 @@
     | ランキング
     .rank-list-tab
       .btn-group.btn-group-sm aria-label=("Basic example") role="group"
-        = link_to '1週間', tutorials_ranks_pv_path, type: 'button'
-        = link_to '1ヶ月', tutorials_ranks_month_pv_path, type: 'button'
-        = link_to 'ALL', tutorials_ranks_all_period_pv_path, type: 'button'
+        = link_to '1週間', tutorials_ranks_pv_path, type: 'button', class: 'btn', id: 'week'
+        = link_to '1ヶ月', tutorials_ranks_month_pv_path, type: 'button', class: 'btn', id: 'month'
+        = link_to 'ALL', tutorials_ranks_all_period_pv_path, type: 'button', class: 'btn', id: 'all'
 
 - @tutorials.each do |tutorial|
   .media.border
