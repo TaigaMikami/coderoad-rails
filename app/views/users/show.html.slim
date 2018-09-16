@@ -9,12 +9,19 @@
   / .col-md-6.mb-4
 
 hr
-
-.jumbotron
-  .alert.alert-primary role="alert"
-    strong マイチュートリアル
+.row.mytutorial
+  .col-md-4
+    .alert.alert-primary.mytutorial-title role="alert"
+      strong マイチュートリアル
+  .col-md-4
+    .alert.alert-success.mytutorial-title
+      strong やったもの
+  .col-md-4
+    .alert.alert-danger.mytutorial-title
+      strong まだやってない
+.jumbotron.mytutorial-tron
   - @mytutorials.each do |tutorial|
-    .card.mytutorial
+    .card.mytutorial-card
       .card-header
         = tutorial.title
       .card-body.user-body

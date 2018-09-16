@@ -27,6 +27,18 @@ class UsersController < ApplicationController
   def notification_login
   end
 
+  def change_task_status
+
+  end
+
+  def done
+
+  end
+
+  def doing
+
+  end
+
   private
 
   def set_user

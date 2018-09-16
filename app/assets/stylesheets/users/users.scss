@@ -34,5 +34,21 @@
 }
 
 .mytutorial {
+  height: 50px;
+  .col-md-4 {
+    //padding: 0;
+  }
+}
+
+.mytutorial-card {
   margin-bottom: 5px;
+}
+
+.mytutorial-title {
+  margin-bottom: 0;
+}
+
+.mytutorial-tron {
+  background-color: #cce5ff;
+  padding-top: 10px;
 }
