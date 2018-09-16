@@ -4,6 +4,7 @@ class Tutorial < ApplicationRecord
   accepts_nested_attributes_for :user_tutorials
   acts_as_taggable
   is_impressionable
+  paginates_per 9
 
   scope :week_post, -> { where('created_at > ?', 7.days.ago )}
   scope :month_post, -> { where('created_at > ?', 1.month.ago )}

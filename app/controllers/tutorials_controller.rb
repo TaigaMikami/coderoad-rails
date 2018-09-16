@@ -6,9 +6,11 @@ class TutorialsController < ApplicationController
 
   def index
     if params[:tag]
-      @tutorials = Tutorial.tagged_with(params[:tag])
+      @tutorials = Tutorial.tagged_with(params[:tag]).page(params[:page])
+      @tutorials = @tutorials.page(params[:page])
     else
-      @tutorials = Tutorial.all.includes(:users, :tags, :taggings).reverse # 新規投稿順
+      @tutorials = Tutorial.includes(:users, :tags, :taggings).order(created_at: :desc) # 新規投稿順
+      @tutorials = @tutorials.page(params[:page])
     end
   end
 
