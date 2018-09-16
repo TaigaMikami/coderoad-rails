@@ -12,4 +12,8 @@ class Tutorial < ApplicationRecord
   def iine?(user)
     users.include?(user)
   end
+
+  def self.search(keyward)
+    where(['title LIKE ?', "%#{keyward}%"])
+  end
 end

@@ -8,6 +8,9 @@ class TutorialsController < ApplicationController
     if params[:tag]
       @tutorials = Tutorial.tagged_with(params[:tag]).order(created_at: :desc)
       @tutorials = @tutorials.page(params[:page])
+    elsif params[:search]
+      @tutorials = Tutorial.search(params[:search]).order(created_at: :desc)
+      @tutorials = @tutorials.page(params[:page])
     else
       @tutorials = Tutorial.includes(:users, :tags, :taggings).order(created_at: :desc) # 新規投稿順
       @tutorials = @tutorials.page(params[:page])

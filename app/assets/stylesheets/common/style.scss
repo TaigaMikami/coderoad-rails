@@ -36,3 +36,21 @@
 .pagination span {
   border: 1px solid #ddd; /* Gray */
 }
+
+.search-form {
+  //margin-top: 5px !important;
+  position: relative;
+  margin-left: 20px !important;
+  .btn-search {
+    margin-top: 0;
+  }
+  .fa-search {
+    position: absolute;
+    top: 11px;
+    left: 8px;
+    color: gray;
+  }
+  #search {
+    padding-left: 30px;
+  }
+}
