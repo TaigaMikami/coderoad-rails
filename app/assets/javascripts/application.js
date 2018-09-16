@@ -18,5 +18,4 @@
 //= require mdb
 //= require popper.min
 //= require activestorage
-//= require turbolinks
 //= require_tree ./common/
