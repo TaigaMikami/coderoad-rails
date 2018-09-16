@@ -11,7 +11,28 @@
 }
 
 .user-group {
-  span.name {
+  display: flex;
+  .user-content {
     margin-left: 10px;
   }
+  p {
+    margin-bottom: 0;
+  }
+
+}
+
+.user-body {
+  display: flex;
+}
+
+.user-name {
+  padding: 20px 0px;
+  color: gray;
+  h3 {
+    color: #0d0d0d;
+  }
+}
+
+.mytutorial {
+  margin-bottom: 5px;
 }

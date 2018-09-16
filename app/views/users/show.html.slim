@@ -1,9 +1,12 @@
 .row
-  .col-md-6.mb-4
-    = image_tag @user.social_profiles.find_by(provider: 'github').image_url, size: '300x300'
-    = @user.name
-    = @user.description
-  .col-md-6.mb-4
+  .col-md-3.mb-4
+    = image_tag @user.social_profiles.find_by(provider: 'github').image_url, size: '200x200'
+  .col-md-6.user-name
+    h3
+      = @user.name
+    p
+      = @user.description
+  / .col-md-6.mb-4
 
 hr
 
@@ -11,13 +14,18 @@ hr
   .alert.alert-primary role="alert"
     strong マイチュートリアル
   - @mytutorials.each do |tutorial|
-    .card
+    .card.mytutorial
       .card-header
         = tutorial.title
-      .card-body
+      .card-body.user-body
         p.card-text
           - if tutorial.ogp_url.blank?
             = image_tag 'no-ogp-image.jpg', size: '80x80'
           - else
             = image_tag tutorial.ogp_url, size: '80x80'
-          = tutorial.content
+        .detail-container
+          - tutorial.tag_list.each do |tag|
+            label.btn-success.tutorial-tag
+              = tag
+          p.content
+            = tutorial.content
