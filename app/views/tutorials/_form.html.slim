@@ -1,14 +1,18 @@
 = form_with(model: tutorial, local:true) do |f|
   .form-group
+    = f.label :title
     = f.text_field :title, placeholder: 'タイトル', class: 'form-control'
   .form-group
-    = f.text_area :content, placeholder: '内容', class: 'form-control'
+    = f.label :content
+    = f.text_area :content, placeholder: '内容... できるだけ詳細に', class: 'form-control', rows: '10'
   .form-group
-    = f.url_field :url, placeholder: 'http://...', class: 'form-control'
+    = f.label :url
+    = f.url_field :url, placeholder: 'URL http://...', class: 'form-control'
   .form-group
+    = f.label :tag
     .field
       ul#tutorial-tags
-    = f.submit
+    = f.submit '作成', class: 'btn btn-primary'
 
 
 
