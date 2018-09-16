@@ -1,0 +1,5 @@
+h2 Edit User
+
+= image_tag @user.social_profiles.find_by(provider: 'github').image_url, size: '80x80'
+
+= render 'form', user: @user

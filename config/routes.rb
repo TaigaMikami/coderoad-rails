@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#top'
 
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index show edit update]
   get 'notification_login', to: 'users#notification_login'
 
   devise_for :users, controllers: {
