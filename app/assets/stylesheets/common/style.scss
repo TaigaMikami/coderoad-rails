@@ -15,3 +15,24 @@
 .bg-coderoad {
   background-color: #2196f3 !important;
 }
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination span {
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination span.current {
+  background-color: #4285f4;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination span {
+  border: 1px solid #ddd; /* Gray */
+}
