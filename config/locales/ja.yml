@@ -1,0 +1,6 @@
+activerecord:
+  attributes:
+    tutorial:
+      title: 'タイトル'
+      content: '内容'
+
