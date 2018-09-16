@@ -39,7 +39,7 @@ header
           li.nav-item.search-form
             = form_tag tutorials_path, method: 'get' do
               i.fa.fa-search.mr-2
-              = text_field_tag :search, params[:search], placeholder: 'キーワード'
+              = text_field_tag :search, params[:search], placeholder: 'キーワード', class: 'form-control'
               = submit_tag '検索', class: 'btn btn-primary btn-md btn-search'
 
         /! Right
