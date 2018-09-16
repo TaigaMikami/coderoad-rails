@@ -36,6 +36,11 @@ header
                 |  ユーザー一覧
           li.nav-item
             = link_to '新規作成', new_tutorial_path, class: 'nav-link border border-light'
+          li.nav-item.search-form
+            = form_tag tutorials_path, method: 'get' do
+              i.fa.fa-search.mr-2
+              = text_field_tag :search, params[:search], placeholder: 'キーワード'
+              = submit_tag '検索', class: 'btn btn-primary btn-md btn-search'
 
         /! Right
         ul.navbar-nav.nav-flex-icons
