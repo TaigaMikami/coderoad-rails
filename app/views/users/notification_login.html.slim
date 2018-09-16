@@ -1,0 +1,18 @@
+.jumbotron.hero
+  = image_tag 'home/CODEROAD-logo.png'
+  p.lead
+    | お気に入り機能を使用するには、Githubログインが必要です
+  hr.my-2/
+  p
+    - if user_signed_in?
+      | チュートリアル一覧を確認して見ましょう
+    - else
+      | さあ、まずはGitHubアカウントでログインしましょう
+  p.lead
+    - if user_signed_in?
+      = link_to 'チュートリアル一覧へ', tutorials_path , class: 'btn btn-primary'
+      = link_to 'トレンドいいねランキング', tutorials_ranks_iine_path, class: 'btn btn-primary'
+    - else
+      = link_to '/users/auth/github', class: 'btn btn-primary' do
+        i.fa.fa-github.mr-2
+        | GitHubログイン

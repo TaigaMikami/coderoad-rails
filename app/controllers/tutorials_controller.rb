@@ -37,7 +37,7 @@ class TutorialsController < ApplicationController
   end
 
   def make_own_tutorial
-    redirect_to tutorials_path and return unless user_signed_in?
+    redirect_to notification_login_path and return unless user_signed_in?
 
     if UserTutorial.where('user_id = ? and tutorial_id =?', current_user.id, @tutorial.id).blank?
       current_user.tutorials << @tutorial

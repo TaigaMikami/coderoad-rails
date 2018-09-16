@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#top'
 
   resources :users, only: %i[index show]
+  get 'notification_login', to: 'users#notification_login'
 
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',

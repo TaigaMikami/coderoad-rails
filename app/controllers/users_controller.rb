@@ -7,4 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @mytutorials = @user.tutorials.all
   end
+
+  def notification_login
+  end
 end
