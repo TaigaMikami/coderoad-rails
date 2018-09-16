@@ -1,0 +1,6 @@
+ul.list-group
+  - @users.each do |user|
+    li.list-group-item.user-group
+      = image_tag user.social_profiles.find_by(provider: 'github').image_url, size: '60x60'
+      span.name
+        = user.name
