@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_100547) do
+ActiveRecord::Schema.define(version: 2018_09_16_165909) do
 
   create_table "impressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "impressionable_type"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2018_09_16_100547) do
     t.bigint "tutorial_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "is_done", default: 0, null: false, comment: "0:まだ, 1:完了"
     t.index ["tutorial_id"], name: "index_user_tutorials_on_tutorial_id"
     t.index ["user_id"], name: "index_user_tutorials_on_user_id"
   end

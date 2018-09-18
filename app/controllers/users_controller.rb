@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :done, :doing]
 
   def index
     @users = User.all
@@ -28,15 +28,21 @@ class UsersController < ApplicationController
   end
 
   def change_task_status
-
+    status = current_user.user_tutorials.find_by(tutorial_id: params[:tutorial_id]).is_done
+    if status == 0
+      current_user.user_tutorials.find_by(tutorial_id: params[:tutorial_id]).update(is_done: 1)
+    else
+      current_user.user_tutorials.find_by(tutorial_id: params[:tutorial_id]).update(is_done: 0)
+    end
+    redirect_to request.referer
   end
 
   def done
-
+    @mytutorials = current_user.tutorials.includes(:user_tutorials).where(user_tutorials: {is_done: 1})
   end
 
   def doing
-
+    @mytutorials = current_user.tutorials.includes(:user_tutorials).where(user_tutorials: {is_done: 0})
   end
 
   private

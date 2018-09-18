@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'home#top'
 
   resources :users, only: %i[index show edit update]
+  get 'users/:id/doing', to: 'users#doing', as: 'doing'
+  get 'users/:id/done', to: 'users#done', as: 'done'
+  post 'change_status', to: 'users#change_task_status', as: 'change_task_status'
   get 'notification_login', to: 'users#notification_login'
 
   devise_for :users, controllers: {
