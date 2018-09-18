@@ -23,6 +23,16 @@
 
 .user-body {
   display: flex;
+  position: relative;
+  .favorite {
+    position: absolute;
+    right: 10px;
+  }
+  .done {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
 }
 
 .user-name {
@@ -51,4 +61,20 @@
 .mytutorial-tron {
   background-color: #cce5ff;
   padding-top: 10px;
+}
+
+.mytutorial-done {
+  background-color: #d4edda;
+  padding-top: 10px;
+}
+
+.mytutorial-doing {
+  background-color: #f8d7da;
+  padding-top: 10px;
+}
+
+.detail-container {
+  .btn-sm {
+    font-size: 3px;
+  }
 }
