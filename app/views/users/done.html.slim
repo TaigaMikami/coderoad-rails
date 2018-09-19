@@ -51,6 +51,6 @@ hr
           = link_to tutorial_path(tutorial), method: :post, class: 'btn btn-info btn-md favorite' do
             | お気に入り登録
             i.fa.fa-star.ml-2
-        = link_to change_task_status_path(params: { tutorial_id: tutorial }), method: :post, class: 'btn btn-info btn-md done' do
-          | 完了
-          i.fa.fa-check.ml-2
+        = link_to change_task_status_path(params: { tutorial_id: tutorial }), method: :post, class: 'btn btn-md done doing-again' do
+          | やってない
+          i.fa.fa-graduation-cap.ml-2
