@@ -2,7 +2,7 @@ class TutorialsController < ApplicationController
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :make_own_tutorial]
   before_action  :set_available_tags_to_gon
   before_action  :set_tags, only: [:index, :show, :pv, :iine, :month_pv, :month_iine, :all_period_pv, :all_period_iine]
-  impressionist :actions=> [:show]
+  # impressionist :actions=> [:show] unique指定を無視して走ってしまうのでコメントアウト
 
   def index
     if params[:tag]
@@ -18,7 +18,7 @@ class TutorialsController < ApplicationController
   end
 
   def show
-    impressionist(@tutorial, nil, unique: [:session_hash])
+    impressionist(@tutorial, nil, :unique => [:session_hash])
   end
 
   def new
