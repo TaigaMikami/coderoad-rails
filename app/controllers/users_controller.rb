@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @mytutorials = @user.tutorials.all
+    @mytutorials = @user.tutorials.includes(:taggings, :users)
   end
 
   def edit
@@ -38,11 +38,11 @@ class UsersController < ApplicationController
   end
 
   def done
-    @mytutorials = current_user.tutorials.includes(:user_tutorials).where(user_tutorials: {is_done: 1})
+    @mytutorials = current_user.tutorials.includes(:user_tutorials, :taggings, :users).where(user_tutorials: {is_done: 1})
   end
 
   def doing
-    @mytutorials = current_user.tutorials.includes(:user_tutorials).where(user_tutorials: {is_done: 0})
+    @mytutorials = current_user.tutorials.includes(:user_tutorials, :taggings, :users).where(user_tutorials: {is_done: 0})
   end
 
   private
