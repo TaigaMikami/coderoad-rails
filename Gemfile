@@ -39,6 +39,7 @@ gem 'opengraph_parser'
 # PV数計測
 gem 'impressionist'
 
+gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
