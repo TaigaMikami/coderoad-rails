@@ -1,5 +1,5 @@
 .jumbotron.hero
-    = image_tag 'home/CODEROAD-logo.png'
+    = image_tag 'home/CODEROAD-logo.png', class: 'top-logo'
     p.lead
       | プログラミングの道標を作るサイトです
     p.lead
@@ -23,14 +23,14 @@ section#about.home-section
   h2 こんな方が利用します
   .d-flex
     .p-2.flex-fill
-      = image_tag 'home/program.png', size: '170x170'
+      = image_tag 'home/program.png', size: '170x170', class: 'use-image'
       h5 プログラミングを始めようかな
     .p-2.flex-fill
-      = image_tag 'home/question.png', size: '150x150', class: 'question'
+      = image_tag 'home/question.png', size: '150x150', class: 'question use-image'
       h5 アプリケーションを作りたいけど、
       h5 どうしたら良いかわからない
     .p-2.flex-fill
-      = image_tag 'home/search.png', size: '170x170'
+      = image_tag 'home/search.png', size: '170x170', class: 'use-image'
       h5 やってるチュートリアルが終わった
       h5 他のチュートリアルがやりたいな
 
@@ -38,7 +38,7 @@ section#howto.home-section
   h2 使い方は簡単です
   .d-flex
     .p-2.flex-fill
-      = image_tag 'home/search2.png', size: '150x150', class: 'question'
+      = image_tag 'home/search2.png', size: '150x150', class: 'question use-image2'
       h5 あなたに合ったチュートリアルを探すだけです
     .p-2.flex-fill
       i.fa.fa-github
