@@ -34,6 +34,10 @@ module OAuthService
               email: auth.info.email,
               password: Devise.friendly_token[0,20]
             )
+
+            if user.email.blank?
+              user.email = dummy_email(auth)
+            end
             # email確認メール送信を延期するために一時的にemail確認済みの状態にする。
             user.skip_confirmation!
             # email仮をデータベースに保存するため、validationを一時的に無効化。
@@ -49,6 +53,10 @@ module OAuthService
         # ユーザーとSocialProfileオブジェクトを関連づける。
         def associate_user_with_profile!(user, profile)
           profile.update!(user_id: user.id) if profile.user != user
+        end
+
+        def dummy_email(auth)
+          "#{auth.uid}-#{auth.provider}@example.com"
         end
       end
   end

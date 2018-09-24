@@ -1,5 +1,5 @@
 class SocialProfile < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
 
   def self.find_for_oauth(auth)
     profile = find_or_create_by(
