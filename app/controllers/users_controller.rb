@@ -38,14 +38,17 @@ class UsersController < ApplicationController
   end
 
   def done
-    @mytutorials = current_user.tutorials.includes(:user_tutorials, :taggings, :users).where(user_tutorials: {is_done: 1})
+    @mytutorials = set_user_tutorials.where(user_tutorials: {is_done: 1})
   end
 
   def doing
-    @mytutorials = current_user.tutorials.includes(:user_tutorials, :taggings, :users).where(user_tutorials: {is_done: 0})
+    @mytutorials = set_user_tutorials.where(user_tutorials: {is_done: 0})
   end
 
   private
+  def set_user_tutorials
+    User.find(params[:id]).tutorials.includes(:user_tutorials, :taggings, :users)
+  end
 
   def set_user
     @user = User.find(params[:id])

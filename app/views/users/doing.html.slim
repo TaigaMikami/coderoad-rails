@@ -11,7 +11,7 @@
 hr
 .row.mytutorial
   .col-md-4
-    = link_to current_user do
+    = link_to @user do
       .alert.alert-primary.mytutorial-title role="alert"
         strong マイチュートリアル
   .col-md-4
@@ -51,6 +51,7 @@ hr
           = link_to tutorial_path(tutorial), method: :post, class: 'btn btn-info btn-md favorite' do
             | お気に入り登録
             i.fa.fa-star.ml-2
-        = link_to change_task_status_path(params: { tutorial_id: tutorial }), method: :post, class: 'btn btn-info btn-md done' do
-          | 完了
-          i.fa.fa-check.ml-2
+        - if @user == current_user
+          = link_to change_task_status_path(params: {tutorial_id: tutorial}), method: :post, class: 'btn btn-info btn-md done' do
+            | 完了
+            i.fa.fa-check.ml-2
