@@ -62,7 +62,11 @@ class TutorialsController < ApplicationController
 
     def get_ogp(url)
       og = OpenGraph.new(url)
-      return og.images[0], og.description
+      og_image = og.images[0]
+      unless og.images[0].include?('http')
+        og_image = 'no-ogp-image.jpg'
+      end
+      return og_image, og.description
     end
 
     def tutorial_params

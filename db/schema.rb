@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_165909) do
+ActiveRecord::Schema.define(version: 2018_10_02_163845) do
 
   create_table "impressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "impressionable_type"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2018_09_16_165909) do
     t.text "content"
     t.integer "star"
     t.string "url"
-    t.string "ogp_url"
+    t.string "ogp_url", default: "no-ogp-image.jpg"
     t.text "ogp_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
