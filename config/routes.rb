@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'inquiries/new'
+  get 'inquiries/confirm'
+  get 'inquiries/complete'
   root to: 'home#top'
 
   resources :users, only: %i[index show edit update]

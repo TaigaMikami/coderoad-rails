@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_163845) do
+ActiveRecord::Schema.define(version: 2018_10_22_093831) do
 
   create_table "impressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "impressionable_type"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2018_10_02_163845) do
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: { message: 255 }
     t.index ["user_id"], name: "index_impressions_on_user_id"
+  end
+
+  create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "social_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
