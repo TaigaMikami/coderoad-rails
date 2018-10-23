@@ -20,6 +20,7 @@ gem 'html2slim'
 gem 'devise'
 gem 'annotate'
 gem 'kaminari'
+gem 'rails-i18n'
 
 # 環境変数
 gem 'dotenv-rails'
