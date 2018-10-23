@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'inquiries/new'
-  get 'inquiries/confirm'
-  get 'inquiries/complete'
+
   root to: 'home#top'
 
   resources :users, only: %i[index show edit update]
@@ -35,4 +33,8 @@ Rails.application.routes.draw do
   post 'tutorials/:id', to: 'tutorials#make_own_tutorial'
   get 'tags/:tag', to: 'tutorials#index', as: :tag
 
+  # お問い合わせ
+  get 'inquiries/new'
+  post 'inquiries/confirm'
+  post 'inquiries/complete'
 end

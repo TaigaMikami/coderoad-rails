@@ -5,6 +5,11 @@ class InquiriesController < ApplicationController
 
   def confirm
     @inquiry = Inquiry.new(inquiry_params)
+    if @inquiry.valid?
+      render action: 'confirm'
+    else
+      render action: 'new'
+    end
   end
 
   def complete

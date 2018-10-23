@@ -1,2 +1,15 @@
-h1 Inquiries#confirm
-p Find me in app/views/inquiries/confirm.html.slim
+h1 お問い合わせ内容確認
+
+= form_with(model: @inquiry, url: inquiries_complete_path, local: true) do |f|
+  .form-group
+    = f.label :name
+    = @inquiry.name
+  .form-group
+    = f.label :email
+    = @inquiry.email
+  .form-group
+    = f.label :message
+    = simple_format(@inquiry.message)
+  .form-group
+    = f.submit '送信', class: 'btn btn-primary'
+    = link_to '戻る', inquiries_new_path, class: 'btn btn-success'
