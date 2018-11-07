@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root to: 'home#top'
 
   resources :users, only: %i[index show edit update]
