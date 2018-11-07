@@ -32,4 +32,8 @@ Rails.application.routes.draw do
   post 'tutorials/:id', to: 'tutorials#make_own_tutorial'
   get 'tags/:tag', to: 'tutorials#index', as: :tag
 
+  # お問い合わせ
+  get 'inquiries/new'
+  post 'inquiries/confirm'
+  post 'inquiries/complete'
 end

@@ -1,0 +1,19 @@
+= form_with(model: inquiry, url: inquiries_confirm_path, local:true) do |f|
+  - if inquiry.errors.any?
+    .alert.alert-danger
+      strong 入力内容にエラーがあります
+      ul
+        - inquiry.errors.each do |attr, msg|
+          li = "#{attr}#{msg}"
+
+  .form-group
+    = f.label :name
+    = f.text_field :name, placeholder: '名前', class: 'form-control'
+  .form-group
+    = f.label :email
+    = f.email_field :email, placeholder: 'email', class: 'form-control'
+  .form-group
+    = f.label :message
+    = f.text_area :message, placeholder: 'お問い合わせ内容', class: 'form-control', rows: 10
+  .form-group
+    = f.submit '確認', class: 'btn btn-primary'
