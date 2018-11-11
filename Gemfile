@@ -27,6 +27,7 @@ gem 'dotenv-rails'
 
 # 管理画面
 gem 'rails_admin'
+gem 'cancan'
 
 # github認証
 gem 'omniauth'
