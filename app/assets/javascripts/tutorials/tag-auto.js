@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load',function() {
-  var i, len, ref, results, tag;
   $('#tutorial-tags').tagit({
     fieldName: 'tutorial[tag_list]',
     singleField: true,
