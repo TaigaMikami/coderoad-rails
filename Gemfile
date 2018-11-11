@@ -25,6 +25,9 @@ gem 'rails-i18n'
 # 環境変数
 gem 'dotenv-rails'
 
+# 管理画面
+gem 'rails_admin'
+
 # github認証
 gem 'omniauth'
 gem 'omniauth-oauth2'

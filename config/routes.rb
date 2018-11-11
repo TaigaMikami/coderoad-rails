@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   root to: 'home#top'
 
   resources :users, only: %i[index show edit update]
